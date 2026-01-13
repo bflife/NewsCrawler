@@ -59,7 +59,7 @@ services:
       target: frontend
     container_name: news-extractor-frontend
     ports:
-      - "3000:80"
+      - "3021:80"
     depends_on:
       - backend
     restart: unless-stopped

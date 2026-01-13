@@ -123,8 +123,8 @@ def _parse_cgi_data_new(html: str) -> Optional[dict]:
             js_obj_str
         )
 
-        # 步骤2: 处理 'xxx' * 1 这种字符串转数字的JavaScript表达式
-        js_obj_str = re.sub(r"'(\d+)'\s*\*\s*1", r'\1', js_obj_str)
+        # 步骤2: 处理 'xxx' * 1 这种字符串转数字的JavaScript表达式（支持整数和浮点数）
+        js_obj_str = re.sub(r"'([\d.]+)'\s*\*\s*1", r'\1', js_obj_str)
 
         # 步骤3: 使用demjson3解析JavaScript对象为Python字典
         parsed_data = demjson3.decode(js_obj_str)
@@ -326,7 +326,7 @@ class WechatContentParser:
             node (Selector): 节点
         """
         # 对于section等容器标签，处理其子元素
-        if node.root.tag in ["section", "div", "article", "blockquote"]:
+        if node.root.tag in ["section", "div", "article", "blockquote", "figure"]:
             # 如果section、div、article中有直接文本，则直接添加
             if node.xpath("./text()").get("").strip():
                 self._contents.append(

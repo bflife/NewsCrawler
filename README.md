@@ -66,7 +66,7 @@ cd NewsCrawler
 docker compose up -d
 
 # 4. 访问服务
-# - 前端界面: http://localhost:3000
+# - 前端界面: http://localhost:3021
 # - 后端 API: http://localhost:8000/docs
 # - MCP 服务: http://localhost:8765/mcp
 ```

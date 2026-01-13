@@ -2,6 +2,7 @@
 """
 提取 API
 """
+import os
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any
@@ -11,12 +12,17 @@ from news_extractor_core.services import ExtractorService, to_markdown, get_supp
 
 router = APIRouter()
 
+# 图片保存根目录
+IMAGES_BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "images")
+
 
 class ExtractRequest(BaseModel):
     """提取请求"""
     url: str = Field(..., description="新闻链接")
     output_format: str = Field(default="json", description="输出格式: json 或 markdown")
     platform: Optional[str] = Field(default=None, description="平台名称（可选，自动检测）")
+    embed_images: bool = Field(default=False, description="是否将图片转为 Base64 嵌入 Markdown")
+    save_images_locally: bool = Field(default=False, description="是否将图片保存到本地")
 
 
 class ExtractResponse(BaseModel):
@@ -26,6 +32,7 @@ class ExtractResponse(BaseModel):
     markdown: Optional[str] = None
     platform: Optional[str] = None
     extracted_at: str
+    images_dir: Optional[str] = None
     error: Optional[Dict[str, str]] = None
 
 
@@ -39,14 +46,26 @@ async def extract_news(request: ExtractRequest):
             platform=request.platform
         )
 
+        # 构建图片保存目录
+        images_dir = ""
+        if request.save_images_locally and news_item.news_id:
+            images_dir = os.path.join(IMAGES_BASE_DIR, news_item.news_id)
+
         # 准备响应数据
         response_data = {
             "status": "success",
             "data": news_item.to_dict(),
             "platform": platform,
             "extracted_at": datetime.now().isoformat(),
+            "images_dir": images_dir if request.save_images_locally else None,
             # 总是生成 markdown，方便前端切换格式
-            "markdown": to_markdown(news_item)
+            "markdown": to_markdown(
+                news_item,
+                embed_images=request.embed_images,
+                save_images_locally=request.save_images_locally,
+                images_dir=images_dir,
+                platform=platform
+            )
         }
 
         return response_data
