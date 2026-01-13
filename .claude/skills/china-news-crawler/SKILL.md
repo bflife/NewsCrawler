@@ -7,6 +7,8 @@ description: 中国新闻站点内容提取。支持微信公众号、今日头�
 
 从中国主流新闻平台提取文章内容，输出 JSON 和 Markdown 格式。
 
+**独立可迁移**：本 Skill 包含所有必需代码，无外部依赖，可直接复制到其他项目使用。
+
 ## 支持平台
 
 | 平台 | ID | URL 示例 |
@@ -131,12 +133,22 @@ uv run .claude/skills/china-news-crawler/scripts/extract_news.py \
   "https://www.toutiao.com/article/7434425099895210546/"
 ```
 
+## 依赖要求
+
+本 Skill 需要以下 Python 包（通常已在主项目中安装）：
+- parsel
+- pydantic
+- requests
+- curl-cffi
+- tenacity
+- demjson3
+
 ## 错误处理
 
 | 错误类型 | 说明 | 解决方案 |
 |----------|------|----------|
 | `无法识别该平台` | URL 不匹配任何支持的平台 | 检查 URL 是否正确 |
-| `平台不是中国新闻平台` | 非中国站点 | 本 Skill 仅支持中国新闻站点 |
+| `平台不支持` | 非中国站点 | 本 Skill 仅支持中国新闻站点 |
 | `提取失败` | 网络错误或页面结构变化 | 重试或检查 URL 有效性 |
 
 ## 注意事项
@@ -145,6 +157,29 @@ uv run .claude/skills/china-news-crawler/scripts/extract_news.py \
 - 不要进行大规模爬取
 - 尊重目标网站的 robots.txt 和服务条款
 - 微信公众号可能需要有效的 Cookie（当前默认配置通常可用）
+
+## 目录结构
+
+```
+china-news-crawler/
+├── SKILL.md                      # [必需] Skill 定义文件
+├── references/
+│   └── platform-patterns.md      # 平台 URL 模式说明
+└── scripts/
+    ├── extract_news.py           # CLI 入口脚本
+    ├── models.py                 # 数据模型
+    ├── detector.py               # 平台检测
+    ├── formatter.py              # Markdown 格式化
+    └── crawlers/                 # 爬虫模块
+        ├── __init__.py
+        ├── base.py               # BaseNewsCrawler 基类
+        ├── fetchers.py           # HTTP 获取策略
+        ├── wechat.py             # 微信公众号
+        ├── toutiao.py            # 今日头条
+        ├── netease.py            # 网易新闻
+        ├── sohu.py               # 搜狐新闻
+        └── tencent.py            # 腾讯新闻
+```
 
 ## 参考
 
