@@ -180,3 +180,6 @@ news-extractor-ui/backend/.venv/
 news-extractor-ui/backend/__pycache__/
 news-extractor-ui/backend/*.pyc
 news-extractor-ui/backend/uv.lock
+
+# Skill output
+output/
