@@ -31,8 +31,10 @@ news-extractor-mcp = "news_extractor_mcp.server:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[dependency-groups]
+dev = []
+
 [tool.uv]
-dev-dependencies = []
 [tool.uv.sources]
 news-extractor-core = { workspace = true }
 news-extractor-backend = { workspace = true }
@@ -64,5 +66,9 @@ packages = [
 ]
 
 [[tool.uv.index]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://pypi.org/simple"
 default = true
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = false

@@ -21,9 +21,15 @@ packages = ["news_extractor_mcp"]
 [project.scripts]
 news-extractor-mcp = "news_extractor_mcp.server:main"
 
+[dependency-groups]
+dev = []
+
 [tool.uv]
-dev-dependencies = []
+
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+default = true
 
 [[tool.uv.index]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-default = true
+default = false
