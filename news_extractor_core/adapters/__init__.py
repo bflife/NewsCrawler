@@ -14,6 +14,7 @@ from .naver import NaverAdapter
 from .quora import QuoraAdapter
 from .bbc import BBCAdapter
 from .cnn import CNNAdapter
+from .twitter import TwitterAdapter
 
 __all__ = [
     "CrawlerAdapter",
@@ -28,4 +29,5 @@ __all__ = [
     "QuoraAdapter",
     "BBCAdapter",
     "CNNAdapter",
+    "TwitterAdapter",
 ]

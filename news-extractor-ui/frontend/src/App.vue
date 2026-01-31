@@ -21,7 +21,7 @@
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">9+</span>
+            <span class="stat-number">12</span>
             <span class="stat-label">{{ t('app.stats.platforms') }}</span>
           </div>
           <div class="stat-divider"></div>
@@ -126,7 +126,7 @@ const handlePlatformSelected = (platformId: string) => {
   selectedPlatform.value = platformId
 }
 
-const handleExtract = async (url: string) => {
+const handleExtract = async (url: string, cookie?: string) => {
   loading.value = true
   progress.value = 0
   progressMessage.value = t('common.connecting')
@@ -143,8 +143,16 @@ const handleExtract = async (url: string) => {
   }, 500)
 
   try {
+    // 构建请求参数
+    const requestData: { url: string; output_format: 'markdown'; cookie?: string } = {
+      url,
+      output_format: 'markdown'
+    }
+    if (cookie) {
+      requestData.cookie = cookie
+    }
     // 总是请求 markdown 格式，这样所有标签页都能显示
-    const response = await extractNews({ url, output_format: 'markdown' })
+    const response = await extractNews(requestData)
     progress.value = 100
     progressMessage.value = t('common.extractComplete')
 

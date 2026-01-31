@@ -118,6 +118,12 @@ const platforms = computed<Platform[]>(() => [
     name: t('platforms.cnn.name'),
     icon: '/logos/cnn.png',
     description: t('platforms.cnn.description')
+  },
+  {
+    id: 'twitter',
+    name: t('platforms.twitter.name'),
+    icon: '/logos/twitter.png',
+    description: t('platforms.twitter.description')
   }
 ])
 

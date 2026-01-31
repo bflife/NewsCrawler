@@ -26,6 +26,7 @@ export interface ExtractRequest {
   url: string
   output_format: 'json' | 'markdown'
   platform?: string
+  cookie?: string  // 用于需要认证的平台（如 Twitter）
 }
 
 export interface ExtractResponse {

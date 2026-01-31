@@ -40,6 +40,33 @@
           <div class="detected-badge">{{ t('input.smartDetection') }}</div>
         </div>
       </transition>
+
+      <!-- Twitter Cookie 输入框 -->
+      <transition name="slide-down">
+        <div class="cookie-input-section" v-if="needsCookie">
+          <div class="cookie-hint">
+            <span class="hint-icon">🔐</span>
+            <span>{{ t('input.cookieHint') }}</span>
+          </div>
+          <div class="input-wrapper">
+            <div class="input-icon">🍪</div>
+            <input
+              v-model="cookie"
+              type="password"
+              class="input cookie-input"
+              :placeholder="t('input.cookiePlaceholder')"
+            />
+            <button
+              v-if="cookie"
+              class="btn-clear"
+              @click="clearCookie"
+              :title="t('input.clear')"
+            >
+              <span class="clear-icon">✕</span>
+            </button>
+          </div>
+        </div>
+      </transition>
     </div>
 
     <div class="action-bar">
@@ -68,12 +95,19 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  extract: [url: string]
+  extract: [url: string, cookie?: string]
 }>()
 
 const url = ref('')
+const cookie = ref('')
 const urlInput = ref<HTMLInputElement>()
 const detectedPlatform = ref('')
+
+// 检测是否需要 cookie 的平台
+const needsCookie = computed(() => {
+  const platform = props.selectedPlatform || platformMap[detectedPlatform.value]
+  return platform === 'twitter'
+})
 
 const platformMap: Record<string, string> = {
   'mp.weixin.qq.com': 'wechat',
@@ -84,7 +118,9 @@ const platformMap: Record<string, string> = {
   'detik.com': 'detik',
   'naver.com': 'naver',
   'lennysnewsletter.com': 'lenny',
-  'quora.com': 'quora'
+  'quora.com': 'quora',
+  'twitter.com': 'twitter',
+  'x.com': 'twitter'
 }
 
 const platformName = computed(() => {
@@ -103,7 +139,8 @@ const platformPlaceholders = computed(() => ({
   'lenny': t('input.placeholders.lenny'),
   'naver': t('input.placeholders.naver'),
   'detik': t('input.placeholders.detik'),
-  'quora': t('input.placeholders.quora')
+  'quora': t('input.placeholders.quora'),
+  'twitter': t('input.placeholders.twitter')
 }))
 
 const placeholder = ref(t('input.placeholders.default'))
@@ -148,9 +185,13 @@ const clearInput = () => {
   urlInput.value?.focus()
 }
 
+const clearCookie = () => {
+  cookie.value = ''
+}
+
 const handleExtract = () => {
   if (!url.value || props.loading) return
-  emit('extract', url.value)
+  emit('extract', url.value, needsCookie.value ? cookie.value : undefined)
 }
 </script>
 
@@ -299,6 +340,45 @@ const handleExtract = () => {
   font-weight: 700;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(253, 87, 50, 0.3);
+}
+
+/* Cookie 输入区域 */
+.cookie-input-section {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.05), rgba(29, 161, 242, 0.02));
+  border: 2px solid rgba(29, 161, 242, 0.15);
+  border-radius: 12px;
+}
+
+.cookie-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-200);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hint-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.cookie-input {
+  width: 100%;
+  padding-left: 3.5rem;
+  padding-right: 4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 2px solid rgba(29, 161, 242, 0.2);
+  background: var(--bg-100);
+}
+
+.cookie-input:focus {
+  border-color: rgba(29, 161, 242, 0.5);
+  background: white;
 }
 
 .action-bar {

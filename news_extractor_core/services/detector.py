@@ -17,7 +17,8 @@ PLATFORM_PATTERNS = {
     "lenny": r"https?://www\.lennysnewsletter\.com/",
     "quora": r"https?://.*\.quora\.com/",
     "bbc": r"https?://www\.bbc\.com/news/articles/",
-    "cnn": r"https?://(edition\.|www\.)?cnn\.com/\d{4}/\d{2}/\d{2}/"
+    "cnn": r"https?://(edition\.|www\.)?cnn\.com/\d{4}/\d{2}/\d{2}/",
+    "twitter": r"https?://(?:www\.)?(?:twitter|x)\.com/\w+/status/\d+",
 }
 
 
@@ -50,5 +51,6 @@ def get_supported_platforms() -> list[dict]:
         {"id": "lenny", "name": "Lenny's Newsletter", "icon": "📮"},
         {"id": "quora", "name": "Quora", "icon": "❓"},
         {"id": "bbc", "name": "BBC News", "icon": "🇬🇧"},
-        {"id": "cnn", "name": "CNN News", "icon": "🇺🇸"}
+        {"id": "cnn", "name": "CNN News", "icon": "🇺🇸"},
+        {"id": "twitter", "name": "Twitter/X", "icon": "🐦"},
     ]
