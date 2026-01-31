@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "智能新闻提取器",
-    "subtitle": "一键提取全网新闻内容，支持微信、头条、网易、搜狐、腾讯、Lenny、Naver、Detik、Quora、BBC、CNN等11个主流平台",
+    "subtitle": "一键提取全网新闻内容，支持微信、头条、网易、搜狐、腾讯、Lenny、Naver、Detik、Quora、BBC、CNN、Twitter/X等12个主流平台",
     "stats": {
       "platforms": "支持平台",
       "accuracy": "准确率",
@@ -55,6 +55,10 @@
     "cnn": {
       "name": "CNN News",
       "description": "提取 CNN 新闻内容"
+    },
+    "twitter": {
+      "name": "Twitter/X",
+      "description": "提取推文和话题帖"
     }
   },
   "input": {
@@ -72,8 +76,11 @@
       "quora": "粘贴或输入 Quora 回答链接，例如: https://www.quora.com/question/answers/123456789",
       "bbc": "粘贴或输入 BBC News 链接，例如: https://www.bbc.com/news/articles/c797qlx93j0o",
       "cnn": "粘贴或输入 CNN News 链接，例如: https://edition.cnn.com/2025/10/27/uk/sami-hamdi-detained-ice-intl",
-      "default": "粘贴或输入新闻链接，支持微信、头条、Lenny、Naver、Detik、Quora、BBC、CNN"
+      "twitter": "粘贴或输入 Twitter/X 链接，例如: https://x.com/username/status/1234567890",
+      "default": "粘贴或输入新闻链接，支持微信、头条、Lenny、Naver、Detik、Quora、BBC、CNN、Twitter"
     },
+    "cookieHint": "公开推文无需 Cookie 即可提取。如需访问受保护推文，请粘贴 x.com 的 Cookie（登录后从浏览器开发者工具获取）",
+    "cookiePlaceholder": "在此粘贴您的 x.com Cookie...",
     "selectPlatform": "请先选择一个平台",
     "extractButton": "开始提取",
     "extracting": "提取中...",

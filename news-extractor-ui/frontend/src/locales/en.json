@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Smart News Extractor",
-    "subtitle": "One-click extraction of news content from the web. Supports 11 mainstream platforms including WeChat, Toutiao, NetEase, Sohu, Tencent, Lenny, Naver, Detik, Quora, BBC, and CNN",
+    "subtitle": "One-click extraction of news content from the web. Supports 12 mainstream platforms including WeChat, Toutiao, NetEase, Sohu, Tencent, Lenny, Naver, Detik, Quora, BBC, CNN, and Twitter/X",
     "stats": {
       "platforms": "Platforms",
       "accuracy": "Accuracy",
@@ -55,6 +55,10 @@
     "cnn": {
       "name": "CNN News",
       "description": "Extract CNN news content"
+    },
+    "twitter": {
+      "name": "Twitter/X",
+      "description": "Extract tweets and threads"
     }
   },
   "input": {
@@ -72,8 +76,11 @@
       "quora": "Paste or enter Quora answer link, e.g.: https://www.quora.com/question/answers/123456789",
       "bbc": "Paste or enter BBC News link, e.g.: https://www.bbc.com/news/articles/c797qlx93j0o",
       "cnn": "Paste or enter CNN News link, e.g.: https://edition.cnn.com/2025/10/27/uk/sami-hamdi-detained-ice-intl",
-      "default": "Paste or enter news link, supports WeChat, Toutiao, Lenny, Naver, Detik, Quora, BBC, CNN"
+      "twitter": "Paste or enter Twitter/X link, e.g.: https://x.com/username/status/1234567890",
+      "default": "Paste or enter news link, supports WeChat, Toutiao, Lenny, Naver, Detik, Quora, BBC, CNN, Twitter"
     },
+    "cookieHint": "Public tweets can be extracted without Cookie. For protected tweets, paste your x.com Cookie (get it from browser DevTools after logging in)",
+    "cookiePlaceholder": "Paste your x.com Cookie here...",
     "selectPlatform": "Please select a platform first",
     "extractButton": "Start Extraction",
     "extracting": "Extracting...",

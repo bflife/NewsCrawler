@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 NewsCrawler is a multi-platform news and content crawler collection designed for educational purposes only. It supports:
-- **News Crawlers**: 6+ platforms (WeChat, Toutiao, Lenny's Newsletter, Naver Blog, Detik News, Quora)
+- **News Crawlers**: 12 platforms (WeChat, Toutiao, NetEase, Sohu, Tencent, Lenny's Newsletter, Naver Blog, Detik News, Quora, BBC, CNN, Twitter/X)
 - **Video Downloaders**: Stock media platforms (Pexels, Pixabay, Coverr, Mixkit)
 - **Web UI**: Modern FastAPI + Vue 3 interface for easy extraction
 
@@ -15,13 +15,19 @@ NewsCrawler is a multi-platform news and content crawler collection designed for
 
 ```
 NewsCrawler/
-├── news_crawler/              # Consolidated crawler modules (NEW)
+├── news_crawler/              # Consolidated crawler modules
 │   ├── wechat_news/          # WeChat crawler
 │   ├── toutiao_news/         # Toutiao crawler
+│   ├── netease_news/         # NetEase News
+│   ├── sohu_news/            # Sohu News
+│   ├── tencent_news/         # Tencent News
 │   ├── lennysnewsletter/     # Lenny's Newsletter
 │   ├── naver_news/           # Naver Blog
 │   ├── detik_news/           # Detik News
-│   └── quora/                # Quora
+│   ├── quora/                # Quora
+│   ├── bbc_news/             # BBC News
+│   ├── cnn_news/             # CNN News
+│   └── twitter_news/         # Twitter/X (guest token or optional cookie auth)
 │
 ├── news-extractor-ui/        # Web UI Application (NEW)
 │   ├── backend/              # FastAPI backend
@@ -191,6 +197,34 @@ All crawlers follow a consistent architecture:
 - **Parser**: `.detail__body-text` extraction
 - **Cover**: Extracts cover media from `.detail__media`
 
+#### Twitter/X (`news_crawler/twitter_news/`)
+- **URL**: `https://x.com/{username}/status/{id}` or `https://twitter.com/{username}/status/{id}`
+- **API**: Uses X internal GraphQL API (`TweetResultByRestId`)
+- **Authentication**: Supports two modes:
+  1. **Guest Token mode** (default): No authentication needed, can access public tweets
+  2. **Cookie mode**: For protected tweets, requires Cookie authentication (`auth_token` + `ct0`)
+- **Features**:
+  - Supports regular tweets, long tweets (note_tweet), and articles
+  - Extracts images, videos (highest bitrate), and quoted tweets
+  - Handles both twitter.com and x.com URLs
+  - Automatic fallback: tries Guest Token first, then Cookie auth if available
+
+**Cookie Configuration (Optional - only needed for protected tweets):**
+```bash
+# Option 1: Full cookie string (recommended for Web UI)
+export TWITTER_COOKIE="guest_id=xxx; auth_token=abc123; ct0=xyz789; ..."
+
+# Option 2: Separate tokens
+export TWITTER_AUTH_TOKEN=abc123
+export TWITTER_CT0=xyz789
+```
+
+**Getting Cookie (only if needed):**
+1. Log in to x.com
+2. Open browser DevTools (F12) → Network tab
+3. Click any request and find `Cookie:` in Request Headers
+4. Copy the entire cookie value
+
 ### Import Changes (Important!)
 
 **OLD (before restructuring):**
@@ -240,7 +274,8 @@ Extract news content from URL.
 ```json
 {
   "url": "https://mp.weixin.qq.com/s/xxxxx",
-  "output_format": "markdown"  // or "json"
+  "output_format": "markdown",  // or "json"
+  "cookie": "optional_cookie_string"  // Required for Twitter/X
 }
 ```
 
@@ -400,6 +435,20 @@ This repository is for educational and research purposes only. Users must:
 - Understand that responsibility for misuse lies with the user
 
 ## Recent Changes
+
+### 2025-01-31 - Twitter/X Support
+- **🆕 Twitter/X Crawler** (`news_crawler/twitter_news/`): Added support for extracting tweets
+  - Uses X internal GraphQL API (`TweetResultByRestId`)
+  - **Dual authentication modes**:
+    - Guest Token mode (default): No auth needed for public tweets
+    - Cookie mode (optional): For protected tweets
+  - Supports regular tweets, long tweets (note_tweet), articles, and quoted tweets
+  - Extracts images and videos (highest bitrate)
+- **🔧 Web UI Update**: Added Twitter platform with optional Cookie input
+  - Cookie input field shown when Twitter platform is detected
+  - Cookie is optional - public tweets work without it
+  - Updated platform count to 12
+- **📝 Core Package Update**: Added TwitterAdapter with optional cookie parameter
 
 ### 2024-10-18 - MCP Integration
 - **🆕 MCP Server** (`news_extractor_mcp/`): Added Model Context Protocol server for AI Agent integration

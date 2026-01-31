@@ -23,6 +23,7 @@ class ExtractRequest(BaseModel):
     platform: Optional[str] = Field(default=None, description="平台名称（可选，自动检测）")
     embed_images: bool = Field(default=False, description="是否将图片转为 Base64 嵌入 Markdown")
     save_images_locally: bool = Field(default=False, description="是否将图片保存到本地")
+    cookie: Optional[str] = Field(default=None, description="Cookie 字符串，用于需要认证的平台（如 Twitter）")
 
 
 class ExtractResponse(BaseModel):
@@ -43,7 +44,8 @@ async def extract_news(request: ExtractRequest):
         # 提取新闻
         news_item, platform = ExtractorService.extract_news(
             url=request.url,
-            platform=request.platform
+            platform=request.platform,
+            cookie=request.cookie
         )
 
         # 构建图片保存目录
