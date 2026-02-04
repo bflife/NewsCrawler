@@ -30,79 +30,80 @@
       <!-- Hero Section -->
       <header class="hero-section">
         <div class="hero-content">
-        <div class="hero-badge-wrapper">
-          <div class="hero-badge">
-            <span class="badge-icon">✨</span>
-            <span>AI-Powered Content Extraction</span>
+          <div class="hero-badge-wrapper">
+            <div class="hero-badge">
+              <span class="badge-icon">✨</span>
+              <span>AI-Powered Content Extraction</span>
+            </div>
+            <span class="coming-soon-tag">{{ t('common.comingSoon') }}</span>
           </div>
-          <span class="coming-soon-tag">{{ t('common.comingSoon') }}</span>
+          <h1 class="hero-title">
+            <span class="title-gradient">{{ t('app.title') }}</span>
+          </h1>
+          <p class="hero-subtitle">
+            {{ t('app.subtitle') }}
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">12</span>
+              <span class="stat-label">{{ t('app.stats.platforms') }}</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">99%</span>
+              <span class="stat-label">{{ t('app.stats.accuracy') }}</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">< 3s</span>
+              <span class="stat-label">{{ t('app.stats.responseTime') }}</span>
+            </div>
+          </div>
         </div>
-        <h1 class="hero-title">
-          <span class="title-gradient">{{ t('app.title') }}</span>
-        </h1>
-        <p class="hero-subtitle">
-          {{ t('app.subtitle') }}
-        </p>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">12</span>
-            <span class="stat-label">{{ t('app.stats.platforms') }}</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">99%</span>
-            <span class="stat-label">{{ t('app.stats.accuracy') }}</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">< 3s</span>
-            <span class="stat-label">{{ t('app.stats.responseTime') }}</span>
-          </div>
+
+        <!-- 装饰元素 -->
+        <div class="hero-decoration">
+          <div class="decoration-circle decoration-1"></div>
+          <div class="decoration-circle decoration-2"></div>
+          <div class="decoration-circle decoration-3"></div>
         </div>
-      </div>
+      </header>
 
-      <!-- 装饰元素 -->
-      <div class="hero-decoration">
-        <div class="decoration-circle decoration-1"></div>
-        <div class="decoration-circle decoration-2"></div>
-        <div class="decoration-circle decoration-3"></div>
-      </div>
-    </header>
+      <main class="app-main">
+        <!-- 平台选择器 -->
+        <PlatformSelector
+          @platform-selected="handlePlatformSelected"
+        />
 
-    <main class="app-main">
-      <!-- 平台选择器 -->
-      <PlatformSelector
-        @platform-selected="handlePlatformSelected"
-      />
+        <!-- URL 输入 -->
+        <UrlInputNew
+          :loading="loading"
+          :selected-platform="selectedPlatform"
+          @extract="handleExtract"
+        />
 
-      <!-- URL 输入 -->
-      <UrlInputNew
-        :loading="loading"
-        :selected-platform="selectedPlatform"
-        @extract="handleExtract"
-      />
+        <!-- 提取进度 -->
+        <ExtractProgress
+          v-if="loading"
+          :progress="progress"
+          :message="progressMessage"
+        />
 
-      <!-- 提取进度 -->
-      <ExtractProgress
-        v-if="loading"
-        :progress="progress"
-        :message="progressMessage"
-      />
+        <!-- 结果展示 -->
+        <ResultViewerNew
+          v-if="result && !loading"
+          :result="result"
+        />
 
-      <!-- 结果展示 -->
-      <ResultViewerNew
-        v-if="result && !loading"
-        :result="result"
-      />
-
-      <!-- 重新开始按钮 -->
-      <div v-if="result && !loading" class="restart-section">
-        <button class="btn btn-outline" @click="restart">
-          <span>🔄</span>
-          <span>{{ t('common.extractNew') }}</span>
-        </button>
-      </div>
-    </main>
+        <!-- 重新开始按钮 -->
+        <div v-if="result && !loading" class="restart-section">
+          <button class="btn btn-outline" @click="restart">
+            <span>🔄</span>
+            <span>{{ t('common.extractNew') }}</span>
+          </button>
+        </div>
+      </main>
+    </div>
 
     <!-- 调度器管理视图 -->
     <main v-if="currentView === 'scheduler'" class="app-main scheduler-view">
