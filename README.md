@@ -5,7 +5,9 @@
 **多平台新闻 & 内容爬虫集合**
 
 
-支持微信公众号、今日头条、网易新闻、搜狐、腾讯、Naver、Detik、Quora、BBC、CNN 等 11 个主流平台
+支持微信公众号、今日头条、网易新闻、搜狐、腾讯、Naver、Detik、Quora、BBC、CNN、Twitter/X 等 12 个主流平台
+
+**🆕 新增国际新闻爬虫**: 支持全球 130+ 个国际新闻网站，覆盖 20 个国家/地区，提供定时扫描和自动更新检测
 
 提供命令行调用、可视化 Web UI、统一 JSON 输出、支持MCP协议
 
@@ -30,21 +32,23 @@
 
 <div align="center">
 
-| 🌍 多平台支持 | 🎨 双模式使用 | 📦 标准化输出 | ⚡ 快速部署 | 🤖 MCP 支持 |
-|:---:|:---:|:---:|:---:|:---:|
-| 11 个主流平台<br/>覆盖中英韩印尼 | Python API<br/>+ Web UI | 统一 JSON 格式<br/>易于集成 | uv 包管理器<br/>极速安装 | 集成各类AI总结文章 |
+| 🌍 多平台支持 | 🎨 双模式使用 | 📦 标准化输出 | ⚡ 快速部署 | 🤖 MCP 支持 | 🌐 国际覆盖 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 12 个主流平台<br/>覆盖中英韩印尼 | Python API<br/>+ Web UI | 统一 JSON 格式<br/>易于集成 | uv 包管理器<br/>极速安装 | 集成各类AI总结文章 | 130+ 国际网站<br/>定时扫描 |
 
 
 </div>
 
 **核心特性:**
 
-- ✅ **全平台覆盖** - 支持微信公众号、今日头条、网易、搜狐、腾讯、Lenny's Newsletter、Naver Blog、Detik News、Quora、BBC News、CNN News
+- ✅ **全平台覆盖** - 支持微信公众号、今日头条、网易、搜狐、腾讯、Lenny's Newsletter、Naver Blog、Detik News、Quora、BBC News、CNN News、Twitter/X
+- ✅ **🆕 国际新闻** - 支持 130+ 个国际新闻网站，覆盖美国、日本、英国、香港、台湾等 20 个国家/地区，提供定时扫描和更新检测
 - ✅ **智能提取** - 自动识别平台类型,提取标题、正文、图片、视频等多媒体内容
 - ✅ **统一输出** - 所有平台输出标准化 JSON 格式,完美适配数据分析、入库、下游处理
 - ✅ **灵活使用** - 支持 Python API(自动化) + Web UI(可视化) + MCP Server(AI Agent)
 - ✅ **一键部署** - Docker Compose 编排所有服务(后端 + 前端 + MCP)
 - ✅ **AI 智能体集成** - 支持 MCP 协议,可接入 Claude Desktop 等 AI 工具
+- ✅ **定时任务** - 支持按时间间隔自动扫描国际新闻网站，智能检测更新
 - ✅ **模块化设计** - 各平台爬虫解耦,易于扩展新平台或优化现有实现
 - ✅ **轻量高效** - 使用 uv 管理依赖,安装快速,运行稳定
 
@@ -289,9 +293,33 @@ uv run news-extractor-mcp --host 0.0.0.0 --port 8765
 | Naver Blog | `blog.naver.com` | 韩语 | 博客平台 |
 | Detik News | `detik.com` | 印尼语 | 东南亚新闻 |
 | Quora | `quora.com` | 英文 | 问答内容 |
+| Twitter/X | `x.com` `twitter.com` | 多语言 | 推文提取 |
 
 ### 视频素材平台
 **Pexels** · **Pixabay** · **Coverr** · **Mixkit** - 高质量免费视频素材下载
+
+### 🆕 国际新闻网站 (130+ 网站)
+
+支持全球主要国家/地区的新闻网站，按地区分类：
+
+| 地区 | 国家/地区 | 网站数量 | 主要网站 |
+|------|----------|---------|---------|
+| 🌏 东亚 | 日本、韩国、朝鲜 | 19 | 共同社、NHK、朝日新闻、韩联社等 |
+| 🌏 东南亚 | 马来西亚、新加坡、越南等 | 15 | 星洲日报、联合早报等 |
+| 🌏 大中华 | 香港、澳门、台湾 | 46 | 苹果日报、澳门日报、联合报等 |
+| 🌍 欧洲 | 英国、法国、德国、俄罗斯等 | 19 | 路透社、BBC、金融时报、卫报等 |
+| 🌎 北美 | 美国 | 22 | 纽约时报、华尔街日报、CNN等 |
+| 🌏 大洋洲 | 澳大利亚、新西兰 | 5 | 澳广、每日电讯报等 |
+| 🌏 南亚 | 印度 | 3 | 印度斯坦时报、印度快报等 |
+
+**特色功能:**
+- ✅ 定时扫描 - 可配置每个网站的扫描间隔
+- ✅ 更新检测 - 智能识别新文章，避免重复爬取
+- ✅ 并行处理 - 支持多线程并发爬取
+- ✅ 历史追踪 - SQLite 数据库记录爬取历史
+- ✅ 灵活配置 - 可启用/禁用特定网站
+
+📖 **详细文档**: [国际新闻爬虫使用指南](INTERNATIONAL_NEWS_GUIDE.md)
 
 ---
 
@@ -303,7 +331,26 @@ uv run news-extractor-mcp --host 0.0.0.0 --port 8765
 🔬 学术研究 / 数据科学 - 跨平台内容抓取
 🎓 教学项目 / 个人学习 - 爬虫框架模板
 🤖 AI 训练数据采集 / 内容质量分析
+🌐 国际新闻监控 - 定时抓取全球主流媒体
 ```
+
+### 🆕 国际新闻爬虫使用示例
+
+```bash
+# 查看所有支持的国家
+python3 -m news_crawler.international_news.cli list --countries
+
+# 扫描美国主流媒体
+python3 -m news_crawler.international_news.cli scan --country 美国 --max-articles 10
+
+# 启动定时扫描（每小时扫描一次）
+python3 -m news_crawler.international_news.cli start --interval 3600
+
+# 查看爬取统计
+python3 -m news_crawler.international_news.cli stats --days 7
+```
+
+📖 **完整使用指南**: [国际新闻爬虫文档](INTERNATIONAL_NEWS_GUIDE.md)
 
 ---
 

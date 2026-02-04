@@ -1,0 +1,1363 @@
+{
+  "sources": [
+    {
+      "id": "backchina",
+      "name": "倍可亲",
+      "country": "阿塞拜疆",
+      "url": "http://news.backchina.com/rank.php",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "boxun",
+      "name": "博讯",
+      "country": "阿塞拜疆",
+      "url": "http://www.boxun.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "soundofhope",
+      "name": "希望之声",
+      "country": "阿塞拜疆",
+      "url": "http://www.soundofhope.org/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "open_magazine",
+      "name": "开放杂志",
+      "country": "爱尔兰",
+      "url": "http://www.open.com.hk/",
+      "category": "杂志",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "abc_au",
+      "name": "澳大利亚广播公司",
+      "country": "澳大利亚",
+      "url": "http://www.australiaplus.com/international/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "au_daily",
+      "name": "澳洲日报",
+      "country": "澳大利亚",
+      "url": "http://www.1688.com.au/site1/news/cn/index.shtml",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "daily_telegraph_au",
+      "name": "每日电讯报",
+      "country": "澳大利亚",
+      "url": "http://www.dailytelegraph.com.au/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "exmoo",
+      "name": "力报",
+      "country": "澳门",
+      "url": "http://www.exmoo.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "chengpou",
+      "name": "正报",
+      "country": "澳门",
+      "url": "http://www.chengpou.com.mo/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "taichungdaily",
+      "name": "大众报",
+      "country": "澳门",
+      "url": "http://www.taichungdaily.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "vakiodaily",
+      "name": "华侨报",
+      "country": "澳门",
+      "url": "http://www.vakiodaily.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "waou",
+      "name": "新华濠报",
+      "country": "澳门",
+      "url": "http://www.waou.com.mo/main.htm",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "shimindaily",
+      "name": "市民日报",
+      "country": "澳门",
+      "url": "http://www.shimindaily.net/v1/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "houkongdaily",
+      "name": "濠江日报",
+      "country": "澳门",
+      "url": "http://www.houkongdaily.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "macaodaily",
+      "name": "澳门日报",
+      "country": "澳门",
+      "url": "http://www.macaodaily.com/html/2014-12/23/node_2.htm",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "todaymacao",
+      "name": "现代澳门日报",
+      "country": "澳门",
+      "url": "http://www.todaymacao.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "macaupostdaily",
+      "name": "澳门邮报",
+      "country": "澳门",
+      "url": "http://www.macaupostdaily.com/editiorial.php",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "macaudailytimes",
+      "name": "澳门每日时报",
+      "country": "澳门",
+      "url": "http://www.macaudailytimes.com.mo/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "macaubusinessdaily",
+      "name": "澳门商业日报",
+      "country": "澳门",
+      "url": "http://macaubusinessdaily.com/",
+      "category": "商业",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "chosun",
+      "name": "朝鲜日报",
+      "country": "朝鲜",
+      "url": "http://chn.chosun.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "dw",
+      "name": "德国之声",
+      "country": "德国",
+      "url": "http://www.dw.com/zh/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "eluosi",
+      "name": "俄罗斯中文网",
+      "country": "俄罗斯",
+      "url": "http://eluosi.cn/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "sputniknews",
+      "name": "俄罗斯卫星通讯社",
+      "country": "俄罗斯",
+      "url": "http://sputniknews.cn/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "ria",
+      "name": "俄罗斯新闻社",
+      "country": "俄罗斯",
+      "url": "https://ria.ru/",
+      "category": "综合",
+      "language": "ru",
+      "enabled": true
+    },
+    {
+      "id": "1tv_ru",
+      "name": "俄罗斯第一频道",
+      "country": "俄罗斯",
+      "url": "http://www.1tv.ru/",
+      "category": "综合",
+      "language": "ru",
+      "enabled": true
+    },
+    {
+      "id": "afp",
+      "name": "法新社",
+      "country": "法国",
+      "url": "https://www.afp.com/en/home",
+      "category": "通讯社",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "lefigaro",
+      "name": "费加罗报",
+      "country": "法国",
+      "url": "https://www.lefigaro.fr/",
+      "category": "综合",
+      "language": "fr",
+      "enabled": true
+    },
+    {
+      "id": "lemonde",
+      "name": "世界报",
+      "country": "法国",
+      "url": "https://www.lemonde.fr/",
+      "category": "综合",
+      "language": "fr",
+      "enabled": true
+    },
+    {
+      "id": "leparisien",
+      "name": "巴黎人报",
+      "country": "法国",
+      "url": "http://www.leparisien.fr/",
+      "category": "综合",
+      "language": "fr",
+      "enabled": true
+    },
+    {
+      "id": "lesechos",
+      "name": "回声报",
+      "country": "法国",
+      "url": "https://www.lesechos.fr/",
+      "category": "商业",
+      "language": "fr",
+      "enabled": true
+    },
+    {
+      "id": "yonhapnews",
+      "name": "韩联社",
+      "country": "韩国",
+      "url": "http://chinese.yonhapnews.co.kr/",
+      "category": "通讯社",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "epochtimes",
+      "name": "大纪元",
+      "country": "韩国",
+      "url": "http://www.epochtimes.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "creaders",
+      "name": "万维读者网",
+      "country": "韩国",
+      "url": "http://news.creaders.net",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "renminbao",
+      "name": "人民报",
+      "country": "韩国",
+      "url": "http://renminbao.com/rmb/shishi/index.html",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "sinchew",
+      "name": "星洲日报",
+      "country": "马来西亚",
+      "url": "http://www.sinchew.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "guangming_my",
+      "name": "光明日报",
+      "country": "马来西亚",
+      "url": "http://www.guangming.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "intimes",
+      "name": "国际时报",
+      "country": "马来西亚",
+      "url": "http://www.intimes.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "chinapress",
+      "name": "中国报",
+      "country": "马来西亚",
+      "url": "http://www.chinapress.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "orientaldaily_my",
+      "name": "东方日报",
+      "country": "马来西亚",
+      "url": "http://www.orientaldaily.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "kwongwah",
+      "name": "光华日报",
+      "country": "马来西亚",
+      "url": "http://www.kwongwah.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nanyang",
+      "name": "南洋商报",
+      "country": "马来西亚",
+      "url": "http://www.nanyang.com/",
+      "category": "商业",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "ocdn",
+      "name": "华侨日报",
+      "country": "马来西亚",
+      "url": "http://www.ocdn.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "eunited_my",
+      "name": "联合日报",
+      "country": "马来西亚",
+      "url": "http://www.eunited.com.my/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "thestar_my",
+      "name": "The Star Online",
+      "country": "马来西亚",
+      "url": "http://www.thestar.com.my/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "voa",
+      "name": "美国之音",
+      "country": "美国",
+      "url": "http://www.voafanti.com/gate/big5/www.voanews.com/chinese/news/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "bbc",
+      "name": "BBC",
+      "country": "美国",
+      "url": "http://www.bbc.co.uk/chinese/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "abc",
+      "name": "ABC",
+      "country": "美国",
+      "url": "https://www.abc.net.au/chinese/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "wsj",
+      "name": "华尔街日报",
+      "country": "美国",
+      "url": "http://www.chinese.wsj.com/gb/index.asp",
+      "category": "商业",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "worldjournal",
+      "name": "世界新闻网",
+      "country": "美国",
+      "url": "http://www.worldjournal.com",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nytimes_cn",
+      "name": "纽约时报中文网",
+      "country": "美国",
+      "url": "http://cn.nytimes.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nytimes",
+      "name": "纽约时报",
+      "country": "美国",
+      "url": "http://www.nytimes.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "iipdigital",
+      "name": "美国参考",
+      "country": "美国",
+      "url": "http://iipdigital.usembassy.gov/chinese/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "latimes",
+      "name": "洛杉矶时报",
+      "country": "美国",
+      "url": "http://www.latimes.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "bloomberg",
+      "name": "彭博社",
+      "country": "美国",
+      "url": "http://www.bloomberg.com/",
+      "category": "商业",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "rfi",
+      "name": "法广中文网",
+      "country": "美国",
+      "url": "http://www.chinese.rfi.fr/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "ap",
+      "name": "美联社",
+      "country": "美国",
+      "url": "http://www.ap.org/",
+      "category": "通讯社",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "upi",
+      "name": "合众社",
+      "country": "美国",
+      "url": "http://www.upi.com/",
+      "category": "通讯社",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "cbsnews",
+      "name": "哥伦比亚广播公司",
+      "country": "美国",
+      "url": "http://www.cbs.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "usatoday",
+      "name": "今日美国",
+      "country": "美国",
+      "url": "http://www.usatoday.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "aol",
+      "name": "美国在线",
+      "country": "美国",
+      "url": "https://www.aol.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "thediplomat",
+      "name": "外交家杂志",
+      "country": "美国",
+      "url": "https://thediplomat.com/",
+      "category": "政治",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "oann",
+      "name": "一个美国新闻网",
+      "country": "美国",
+      "url": "http://www.oann.com",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "eblnews",
+      "name": "EBL新闻",
+      "country": "美国",
+      "url": "https://eblnews.com",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "newsy",
+      "name": "新闻懒人包",
+      "country": "美国",
+      "url": "http://www.newsy.com",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "cnn",
+      "name": "CNN",
+      "country": "美国",
+      "url": "https://www.cnn.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "rfa",
+      "name": "自由亚洲电台",
+      "country": "美国",
+      "url": "http://www.rfa.org/mandarin",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "chinesenewsnet",
+      "name": "多维新闻网",
+      "country": "美国",
+      "url": "http://www.chinesenewsnet.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "canyu",
+      "name": "参与",
+      "country": "美国",
+      "url": "http://www.canyu.org/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "wqw2010",
+      "name": "维权网",
+      "country": "美国",
+      "url": "http://wqw2010.blogspot.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "panchinese",
+      "name": "泛华网",
+      "country": "美国",
+      "url": "http://panchinese.blogspot.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "ntdtv",
+      "name": "新唐人电视台",
+      "country": "美国",
+      "url": "http://www.ntdtv.com/xtr/gb/index.html",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "newcenturynews",
+      "name": "新世纪新闻网",
+      "country": "美国",
+      "url": "http://www.newcenturynews.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "molihua",
+      "name": "中国茉莉花革命",
+      "country": "美国",
+      "url": "http://www.molihua.org/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "mingjingnews",
+      "name": "明镜",
+      "country": "美国",
+      "url": "http://www.mingjingnews.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "chinaaffairs",
+      "name": "中国事务",
+      "country": "美国",
+      "url": "http://www.chinaaffairs.org/",
+      "category": "政治",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "vot",
+      "name": "西藏之声",
+      "country": "美国",
+      "url": "http://www.vot.org/cn/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "6park",
+      "name": "留园论坛",
+      "country": "美国",
+      "url": "http://site.6park.com/",
+      "category": "论坛",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "dvb",
+      "name": "缅甸民主之声",
+      "country": "缅甸",
+      "url": "http://burmese.dvb.no/",
+      "category": "综合",
+      "language": "my",
+      "enabled": true
+    },
+    {
+      "id": "kyodonews",
+      "name": "共同社",
+      "country": "日本",
+      "url": "https://china.kyodonews.net/",
+      "category": "通讯社",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nhk",
+      "name": "NHK新闻网",
+      "country": "日本",
+      "url": "http://www3.nhk.or.jp/news",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "47news",
+      "name": "共同社日文网",
+      "country": "日本",
+      "url": "http://www.47news.jp/",
+      "category": "通讯社",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "ribenxinwen",
+      "name": "日本新闻网",
+      "country": "日本",
+      "url": "http://www.ribenxinwen.com",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nikkei_cn",
+      "name": "日经新闻中文版",
+      "country": "日本",
+      "url": "http://cn.nikkei.com/",
+      "category": "商业",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "nikkei",
+      "name": "日经新闻日文版",
+      "country": "日本",
+      "url": "http://www.nikkei.com/",
+      "category": "商业",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "jiji",
+      "name": "时事通讯社",
+      "country": "日本",
+      "url": "http://www.jiji.com/",
+      "category": "通讯社",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "asahi",
+      "name": "朝日新闻",
+      "country": "日本",
+      "url": "http://www.asahi.com/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "mainichi",
+      "name": "每日新闻",
+      "country": "日本",
+      "url": "http://mainichi.jp/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "sankei",
+      "name": "产经新闻",
+      "country": "日本",
+      "url": "http://www.sankei.com/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "yomiuri",
+      "name": "读卖新闻",
+      "country": "日本",
+      "url": "http://www.yomiuri.co.jp/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "tokyo_np",
+      "name": "东京新闻",
+      "country": "日本",
+      "url": "http://www.tokyo-np.co.jp/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "news_postseven",
+      "name": "news-postseven",
+      "country": "日本",
+      "url": "http://www.news-postseven.com/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "livedoor",
+      "name": "livedoor",
+      "country": "日本",
+      "url": "http://news.livedoor.com/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "goo",
+      "name": "goo",
+      "country": "日本",
+      "url": "http://news.goo.ne.jp/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "yahoo_jp",
+      "name": "日本雅虎",
+      "country": "日本",
+      "url": "http://news.yahoo.co.jp/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "searchina",
+      "name": "searchChina",
+      "country": "日本",
+      "url": "http://news.searchina.net/",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "recordchina",
+      "name": "RecordChina",
+      "country": "日本",
+      "url": "http://www.recordchina.co.jp",
+      "category": "综合",
+      "language": "ja",
+      "enabled": true
+    },
+    {
+      "id": "japantimes",
+      "name": "日本时报",
+      "country": "日本",
+      "url": "http://www.japantimes.co.jp",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "ltn",
+      "name": "自由时报",
+      "country": "台湾",
+      "url": "http://www.ltn.com.tw/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "appledaily_tw",
+      "name": "苹果日报（台湾）",
+      "country": "台湾",
+      "url": "http://www.appledaily.com.tw/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "udn",
+      "name": "联合报",
+      "country": "台湾",
+      "url": "http://udn.com/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "edn",
+      "name": "经济日报",
+      "country": "台湾",
+      "url": "http://edn.udn.com/",
+      "category": "商业",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "want_daily",
+      "name": "旺报",
+      "country": "台湾",
+      "url": "http://www.want-daily.com/portal.php",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "chinatimes",
+      "name": "中时电子报",
+      "country": "台湾",
+      "url": "http://www.chinatimes.com/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "nownews",
+      "name": "今日新闻网",
+      "country": "台湾",
+      "url": "http://www.nownews.com/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "ettoday",
+      "name": "东森新闻云",
+      "country": "台湾",
+      "url": "http://www.ettoday.net/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "idn",
+      "name": "自立晚报",
+      "country": "台湾",
+      "url": "http://www.idn.com.tw/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "newtalk",
+      "name": "新头壳",
+      "country": "台湾",
+      "url": "http://www.newtalk.tw/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "twgreatnews",
+      "name": "大成报",
+      "country": "台湾",
+      "url": "http://www.twgreatnews.com/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "freedomnews",
+      "name": "自由新闻报",
+      "country": "台湾",
+      "url": "http://www.freedomnews.com.tw/index.php",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "twpowernews",
+      "name": "劲报",
+      "country": "台湾",
+      "url": "http://www.twpowernews.com/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "storm",
+      "name": "风传媒",
+      "country": "台湾",
+      "url": "https://www.storm.mg/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "cna",
+      "name": "中央社",
+      "country": "台湾",
+      "url": "http://www.cna.com.tw/",
+      "category": "通讯社",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "upmedia",
+      "name": "上报",
+      "country": "台湾",
+      "url": "http://www.upmedia.mg/",
+      "category": "综合",
+      "language": "zh-TW",
+      "enabled": true
+    },
+    {
+      "id": "tibetanreview",
+      "name": "西藏评论",
+      "country": "未知",
+      "url": "http://www.tibetanreview.net",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "takungpao",
+      "name": "大公报",
+      "country": "香港",
+      "url": "http://www.takungpao.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "kkp",
+      "name": "公教报",
+      "country": "香港",
+      "url": "http://kkp.org.hk/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "appledaily_hk",
+      "name": "苹果日报",
+      "country": "香港",
+      "url": "http://hk.apple.nextmedia.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "singpao",
+      "name": "成报",
+      "country": "香港",
+      "url": "http://www.singpao.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "orientaldaily_hk",
+      "name": "东方日报",
+      "country": "香港",
+      "url": "http://orientaldaily.on.cc/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "stheadline",
+      "name": "星岛日报",
+      "country": "香港",
+      "url": "http://std.stheadline.com/index.html",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "wenweipo",
+      "name": "文汇报",
+      "country": "香港",
+      "url": "http://www.wenweipo.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "hkcd",
+      "name": "香港商报",
+      "country": "香港",
+      "url": "http://www.hkcd.com.hk/",
+      "category": "商业",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "hket",
+      "name": "经济日报",
+      "country": "香港",
+      "url": "http://www.hket.com/",
+      "category": "商业",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "scmp",
+      "name": "南华早报",
+      "country": "香港",
+      "url": "http://www.scmp.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "metrohk",
+      "name": "都市日报",
+      "country": "香港",
+      "url": "http://www.metrohk.com.hk/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "hkheadline",
+      "name": "头条日报",
+      "country": "香港",
+      "url": "http://www.hkheadline.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "am730",
+      "name": "am730",
+      "country": "香港",
+      "url": "http://www.am730.com.hk/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "skypost",
+      "name": "晴报",
+      "country": "香港",
+      "url": "http://www.skypost.hk/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "chinareviewnews",
+      "name": "中评社",
+      "country": "香港",
+      "url": "http://gb.chinareviewnews.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "apdnews",
+      "name": "亚太日报",
+      "country": "香港",
+      "url": "http://zh.apdnews.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "hk01",
+      "name": "香港01",
+      "country": "香港",
+      "url": "https://www.hk01.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "thestandnews",
+      "name": "立场新闻",
+      "country": "香港",
+      "url": "http://www.thestandnews.com/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "bastillepost",
+      "name": "巴士的报",
+      "country": "香港",
+      "url": "https://www.bastillepost.com/hongkong/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "hkej",
+      "name": "信报",
+      "country": "香港",
+      "url": "https://www2.hkej.com/landing/index",
+      "category": "商业",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "nextdigital",
+      "name": "壹传媒",
+      "country": "香港",
+      "url": "https://www.nextdigital.com.hk/investor/",
+      "category": "综合",
+      "language": "zh-HK",
+      "enabled": true
+    },
+    {
+      "id": "zaobao",
+      "name": "联合早报",
+      "country": "新加坡",
+      "url": "http://www.zaobao.com.sg/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "kanzhongguo",
+      "name": "看中国",
+      "country": "新西兰",
+      "url": "http://www.kanzhongguo.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "aboluowang",
+      "name": "阿波罗网",
+      "country": "新西兰",
+      "url": "http://www.aboluowang.com/",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "hindustantimes",
+      "name": "印度斯坦时报",
+      "country": "印度",
+      "url": "http://www.worldpress.org/newspapers/ASIA/India.cfm",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "thehindu",
+      "name": "印度教徒报",
+      "country": "印度",
+      "url": "http://www.thehindu.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "indianexpress",
+      "name": "印度快报",
+      "country": "印度",
+      "url": "http://indianexpress.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "reuters_cn",
+      "name": "路透中文网",
+      "country": "英国",
+      "url": "http://cn.reuters.com/",
+      "category": "通讯社",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "timesonline",
+      "name": "泰晤士报",
+      "country": "英国",
+      "url": "http://www.timesonline.co.uk/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "ftchinese",
+      "name": "金融时报中文网（中国）",
+      "country": "英国",
+      "url": "http://www.ftchinese.com/",
+      "category": "商业",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "ft",
+      "name": "金融时报",
+      "country": "英国",
+      "url": "http://www.ft.com/home/uk",
+      "category": "商业",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "telegraph",
+      "name": "每日电讯",
+      "country": "英国",
+      "url": "http://www.telegraph.co.uk/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "dailymail",
+      "name": "英国每日邮报",
+      "country": "英国",
+      "url": "http://www.dailymail.co.uk/ushome/index.html",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "guardian",
+      "name": "卫报",
+      "country": "英国",
+      "url": "http://www.guardiannews.com/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "thesun",
+      "name": "太阳报",
+      "country": "英国",
+      "url": "https://www.thesun.co.uk/",
+      "category": "综合",
+      "language": "en",
+      "enabled": true
+    },
+    {
+      "id": "vietnamplus",
+      "name": "越南通讯社",
+      "country": "越南",
+      "url": "http://cn.vietnamplus.vn/",
+      "category": "通讯社",
+      "language": "zh-CN",
+      "enabled": true
+    },
+    {
+      "id": "vovworld",
+      "name": "越南之声广播电台",
+      "country": "越南",
+      "url": "http://vovworld.vn/zh-cn.vov",
+      "category": "综合",
+      "language": "zh-CN",
+      "enabled": true
+    }
+  ]
+}
