@@ -7,7 +7,8 @@ from pydantic import BaseModel
 from datetime import datetime
 
 from news_crawler.scheduler import NewsScheduler
-from news_crawler.sites import register_all_crawlers
+from news_crawler.sites import register_all_crawlers, get_all_crawlers, get_supported_countries
+from news_crawler.sites.enhanced_crawlers import ENHANCED_CRAWLERS
 
 router = APIRouter()
 
@@ -354,3 +355,81 @@ async def init_tasks(interval_minutes: int = Query(60, description="默认间隔
         "total_tasks": len(tasks),
         "interval_minutes": interval_minutes
     }
+
+
+@router.get("/crawlers/available")
+async def get_available_crawlers():
+    """获取所有可用的爬虫"""
+    try:
+        # 获取基础爬虫
+        all_crawlers = get_all_crawlers()
+        basic_crawlers = [
+            {
+                "name": c.name,
+                "base_url": c.base_url,
+                "type": "basic"
+            }
+            for c in all_crawlers if hasattr(c, 'name') and hasattr(c, 'base_url')
+        ]
+        
+        # 获取增强版爬虫
+        enhanced_crawlers_list = [
+            {
+                "name": name,
+                "base_url": getattr(crawler_class, 'base_url', ''),
+                "type": "enhanced"
+            }
+            for name, crawler_class in ENHANCED_CRAWLERS.items()
+        ]
+        
+        return {
+            "total": len(basic_crawlers) + len(enhanced_crawlers_list),
+            "basic_crawlers": len(basic_crawlers),
+            "enhanced_crawlers": len(enhanced_crawlers_list),
+            "crawlers": basic_crawlers + enhanced_crawlers_list
+        }
+    except Exception as e:
+        return {
+            "total": 0,
+            "basic_crawlers": 0,
+            "enhanced_crawlers": len(ENHANCED_CRAWLERS),
+            "crawlers": [
+                {
+                    "name": name,
+                    "base_url": getattr(crawler_class, 'base_url', ''),
+                    "type": "enhanced"
+                }
+                for name, crawler_class in ENHANCED_CRAWLERS.items()
+            ],
+            "error": str(e)
+        }
+
+
+@router.get("/crawlers/by-country")
+async def get_crawlers_by_country():
+    """按国家/地区获取爬虫列表"""
+    try:
+        countries = get_supported_countries()
+        result = {}
+        
+        for country in countries:
+            from news_crawler.sites import get_crawlers_by_country
+            crawlers = get_crawlers_by_country(country)
+            result[country] = [
+                {
+                    "name": c.name if hasattr(c, 'name') else 'unknown',
+                    "base_url": c.base_url if hasattr(c, 'base_url') else ''
+                }
+                for c in crawlers
+            ]
+        
+        return {
+            "countries": len(result),
+            "data": result
+        }
+    except Exception as e:
+        return {
+            "error": str(e),
+            "countries": 0,
+            "data": {}
+        }
