@@ -1,0 +1,53 @@
+{
+  "version": "3.0",
+  "description": "NewsCrawler 新闻源配置",
+  "updated": "2026-02-04",
+  "sources": [
+    {
+      "id": "cnn",
+      "name": "CNN",
+      "country": "美国",
+      "url": "https://www.cnn.com",
+      "type": "enhanced",
+      "enabled": true
+    },
+    {
+      "id": "nytimes",
+      "name": "纽约时报",
+      "country": "美国",
+      "url": "https://www.nytimes.com",
+      "type": "enhanced",
+      "enabled": true
+    },
+    {
+      "id": "bbc_chinese",
+      "name": "BBC中文网",
+      "country": "英国",
+      "url": "https://www.bbc.com/zhongwen/simp",
+      "type": "enhanced",
+      "enabled": true
+    },
+    {
+      "id": "zaobao",
+      "name": "联合早报",
+      "country": "新加坡",
+      "url": "https://www.zaobao.com.sg",
+      "type": "enhanced",
+      "enabled": true
+    },
+    {
+      "id": "hk01",
+      "name": "香港01",
+      "country": "香港",
+      "url": "https://www.hk01.com",
+      "type": "enhanced",
+      "enabled": true
+    }
+  ],
+  "statistics": {
+    "total_sources": 170,
+    "enhanced_sources": 25,
+    "basic_sources": 145,
+    "countries": 21
+  }
+}
