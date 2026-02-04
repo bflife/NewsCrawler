@@ -5,7 +5,7 @@
 **多平台新闻 & 内容爬虫集合**
 
 
-支持微信公众号、今日头条、网易新闻、搜狐、腾讯、Naver、Detik、Quora、BBC、CNN 等 11 个主流平台
+支持微信公众号、今日头条、网易新闻、搜狐、腾讯、Naver、Detik、Quora、BBC、CNN、Twitter/X 等 12 个主流平台
 
 提供命令行调用、可视化 Web UI、统一 JSON 输出、支持MCP协议
 
@@ -32,14 +32,14 @@
 
 | 🌍 多平台支持 | 🎨 双模式使用 | 📦 标准化输出 | ⚡ 快速部署 | 🤖 MCP 支持 |
 |:---:|:---:|:---:|:---:|:---:|
-| 11 个主流平台<br/>覆盖中英韩印尼 | Python API<br/>+ Web UI | 统一 JSON 格式<br/>易于集成 | uv 包管理器<br/>极速安装 | 集成各类AI总结文章 |
+| 12 个主流平台<br/>覆盖中英韩印尼 | Python API<br/>+ Web UI | 统一 JSON 格式<br/>易于集成 | uv 包管理器<br/>极速安装 | 集成各类AI总结文章 |
 
 
 </div>
 
 **核心特性:**
 
-- ✅ **全平台覆盖** - 支持微信公众号、今日头条、网易、搜狐、腾讯、Lenny's Newsletter、Naver Blog、Detik News、Quora、BBC News、CNN News
+- ✅ **全平台覆盖** - 支持微信公众号、今日头条、网易、搜狐、腾讯、Lenny's Newsletter、Naver Blog、Detik News、Quora、BBC News、CNN News、Twitter/X
 - ✅ **智能提取** - 自动识别平台类型,提取标题、正文、图片、视频等多媒体内容
 - ✅ **统一输出** - 所有平台输出标准化 JSON 格式,完美适配数据分析、入库、下游处理
 - ✅ **灵活使用** - 支持 Python API(自动化) + Web UI(可视化) + MCP Server(AI Agent)
@@ -289,6 +289,7 @@ uv run news-extractor-mcp --host 0.0.0.0 --port 8765
 | Naver Blog | `blog.naver.com` | 韩语 | 博客平台 |
 | Detik News | `detik.com` | 印尼语 | 东南亚新闻 |
 | Quora | `quora.com` | 英文 | 问答内容 |
+| Twitter/X | `x.com` `twitter.com` | 多语言 | 推文提取 |
 
 ### 视频素材平台
 **Pexels** · **Pixabay** · **Coverr** · **Mixkit** - 高质量免费视频素材下载
