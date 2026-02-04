@@ -96,26 +96,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { schedulerApi } from '@/services/schedulerApi';
-import type { Task, History, Stats, SchedulerStatus, CountryStats } from '@/types/scheduler';
-import TaskList from './TaskList.vue';
-import HistoryList from './HistoryList.vue';
-import CountryStats from './CountryStats.vue';
+import { ref, onMounted } from 'vue'
+import { schedulerApi } from '@/services/schedulerApi'
+import type { Task, History, Stats, SchedulerStatus, CountryStats } from '@/types/scheduler'
+import TaskList from './TaskList.vue'
+import HistoryList from './HistoryList.vue'
+import CountryStats from './CountryStats.vue'
 
-const activeTab = ref('tasks');
-const loading = ref(false);
+const activeTab = ref('tasks')
+const loading = ref(false)
 
 const tabs = [
   { label: '任务列表', value: 'tasks' },
   { label: '历史记录', value: 'history' },
   { label: '国家统计', value: 'countries' },
-];
+]
 
 const schedulerStatus = ref<SchedulerStatus>({
   running: false,
   registered_crawlers: 0
-});
+})
 
 const stats = ref<Stats>({
   total_tasks: 0,
@@ -125,16 +125,16 @@ const stats = ref<Stats>({
   recent_failed: 0,
   countries: 0,
   countries_list: []
-});
+})
 
-const tasks = ref<Task[]>([]);
-const history = ref<History[]>([]);
-const countries = ref<CountryStats[]>([]);
+const tasks = ref<Task[]>([])
+const history = ref<History[]>([])
+const countries = ref<CountryStats[]>([])
 
 // 加载数据
 async function loadData() {
   try {
-    loading.value = true;
+    loading.value = true
     
     // 并行加载所有数据
     const [statusData, statsData, tasksData, historyData, countriesData] = await Promise.all([
@@ -143,104 +143,104 @@ async function loadData() {
       schedulerApi.getTasks(),
       schedulerApi.getHistory({ limit: 50 }),
       schedulerApi.getCountries()
-    ]);
+    ])
 
-    schedulerStatus.value = statusData;
-    stats.value = statsData;
-    tasks.value = tasksData;
-    history.value = historyData;
-    countries.value = countriesData.countries;
+    schedulerStatus.value = statusData
+    stats.value = statsData
+    tasks.value = tasksData
+    history.value = historyData
+    countries.value = countriesData.countries
   } catch (error) {
-    console.error('加载数据失败:', error);
-    alert('加载数据失败，请检查后端服务是否运行');
+    console.error('加载数据失败:', error)
+    alert('加载数据失败，请检查后端服务是否运行')
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
 
 // 启动调度器
 async function startScheduler() {
   try {
-    loading.value = true;
-    const result = await schedulerApi.start();
-    alert(result.message);
-    await loadData();
+    loading.value = true
+    const result = await schedulerApi.start()
+    alert(result.message)
+    await loadData()
   } catch (error: any) {
-    alert('启动失败: ' + (error.response?.data?.detail || error.message));
+    alert('启动失败: ' + (error.response?.data?.detail || error.message))
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
 
 // 停止调度器
 async function stopScheduler() {
   try {
-    loading.value = true;
-    const result = await schedulerApi.stop();
-    alert(result.message);
-    await loadData();
+    loading.value = true
+    const result = await schedulerApi.stop()
+    alert(result.message)
+    await loadData()
   } catch (error: any) {
-    alert('停止失败: ' + (error.response?.data?.detail || error.message));
+    alert('停止失败: ' + (error.response?.data?.detail || error.message))
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
 
 // 初始化任务
 async function initTasks() {
-  const interval = prompt('请输入爬取间隔（分钟）:', '60');
-  if (!interval) return;
+  const interval = prompt('请输入爬取间隔（分钟）:', '60')
+  if (!interval) return
   
-  const intervalMinutes = parseInt(interval);
+  const intervalMinutes = parseInt(interval)
   if (isNaN(intervalMinutes) || intervalMinutes < 1) {
-    alert('请输入有效的间隔时间');
-    return;
+    alert('请输入有效的间隔时间')
+    return
   }
 
   try {
-    loading.value = true;
-    const result = await schedulerApi.initTasks(intervalMinutes);
-    alert(`${result.message}\n总任务数: ${result.total_tasks}`);
-    await loadData();
+    loading.value = true
+    const result = await schedulerApi.initTasks(intervalMinutes)
+    alert(`${result.message}\n总任务数: ${result.total_tasks}`)
+    await loadData()
   } catch (error: any) {
-    alert('初始化失败: ' + (error.response?.data?.detail || error.message));
+    alert('初始化失败: ' + (error.response?.data?.detail || error.message))
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
 
 // 刷新数据
 async function refreshData() {
-  await loadData();
+  await loadData()
 }
 
 // 处理任务更新
 async function handleTaskUpdate(sourceId: string, data: { enabled?: boolean; interval_minutes?: number }) {
   try {
-    await schedulerApi.updateTask(sourceId, data);
-    await loadData();
+    await schedulerApi.updateTask(sourceId, data)
+    await loadData()
   } catch (error: any) {
-    alert('更新失败: ' + (error.response?.data?.detail || error.message));
+    alert('更新失败: ' + (error.response?.data?.detail || error.message))
   }
 }
 
 // 处理任务执行
 async function handleTaskRun(sourceId: string) {
   try {
-    const result = await schedulerApi.runTask(sourceId);
-    alert(result.message);
+    const result = await schedulerApi.runTask(sourceId)
+    alert(result.message)
     // 等待几秒后刷新数据
-    setTimeout(() => loadData(), 3000);
+    setTimeout(() => loadData(), 3000)
   } catch (error: any) {
-    alert('执行失败: ' + (error.response?.data?.detail || error.message));
+    alert('执行失败: ' + (error.response?.data?.detail || error.message))
   }
 }
 
 onMounted(() => {
-  loadData();
+  loadData()
   // 每30秒自动刷新一次
-  setInterval(loadData, 30000);
-});
+  setInterval(loadData, 30000)
+})
 </script>
 
 <style scoped>
