@@ -64,17 +64,17 @@
     <!-- 标签页 -->
     <div class="tabs">
       <button 
-        v-for="tab in tabs" 
+        v-for="tab in schedulerTabs" 
         :key="tab.value"
-        @click="activeTab = tab.value"
-        :class="['tab-button', { active: activeTab === tab.value }]"
+        @click="activeSchedulerTab = tab.value"
+        :class="['tab-button', { active: activeSchedulerTab === tab.value }]"
       >
         {{ tab.label }}
       </button>
     </div>
 
     <!-- 任务列表标签 -->
-    <div v-if="activeTab === 'tasks'" class="tab-content">
+    <div v-if="activeSchedulerTab === 'tasks'" class="tab-content">
       <TaskList 
         :tasks="tasks" 
         :countries="countries"
@@ -84,12 +84,12 @@
     </div>
 
     <!-- 历史记录标签 -->
-    <div v-if="activeTab === 'history'" class="tab-content">
+    <div v-if="activeSchedulerTab === 'history'" class="tab-content">
       <HistoryList :history="history" />
     </div>
 
     <!-- 国家统计标签 -->
-    <div v-if="activeTab === 'countries'" class="tab-content">
+    <div v-if="activeSchedulerTab === 'countries'" class="tab-content">
       <CountryStats :countries-list="stats.countries_list" />
     </div>
   </div>
@@ -103,10 +103,10 @@ import TaskList from './TaskList.vue'
 import HistoryList from './HistoryList.vue'
 import CountryStats from './CountryStats.vue'
 
-const activeTab = ref('tasks')
+const activeSchedulerTab = ref('tasks')
 const loading = ref(false)
 
-const tabs = [
+const schedulerTabs = [
   { label: '任务列表', value: 'tasks' },
   { label: '历史记录', value: 'history' },
   { label: '国家统计', value: 'countries' },

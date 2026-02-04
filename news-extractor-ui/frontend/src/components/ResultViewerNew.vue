@@ -58,11 +58,11 @@
     <!-- Tab 切换 -->
     <div class="tabs">
       <button
-        v-for="tab in tabs"
+        v-for="tab in resultTabs"
         :key="tab.id"
         class="tab-btn"
-        :class="{ active: activeTab === tab.id }"
-        @click="activeTab = tab.id"
+        :class="{ active: activeResultTab === tab.id }"
+        @click="activeResultTab = tab.id"
       >
         <span class="tab-icon">{{ tab.icon }}</span>
         {{ tab.label }}
@@ -72,7 +72,7 @@
     <!-- Tab 内容 -->
     <div class="tab-content">
       <!-- 预览视图 -->
-      <div v-if="activeTab === 'preview'" class="preview-view">
+      <div v-if="activeResultTab === 'preview'" class="preview-view">
         <div class="content-blocks">
           <div
             v-for="(item, index) in result.data?.contents"
@@ -105,17 +105,17 @@
       </div>
 
       <!-- Markdown 视图 -->
-      <div v-else-if="activeTab === 'markdown'" class="markdown-view">
+      <div v-else-if="activeResultTab === 'markdown'" class="markdown-view">
         <div class="markdown-preview" v-html="formattedMarkdown"></div>
       </div>
 
       <!-- JSON 视图 -->
-      <div v-else-if="activeTab === 'json'" class="json-view">
+      <div v-else-if="activeResultTab === 'json'" class="json-view">
         <pre class="code-block"><code class="language-json" v-html="highlightedJson"></code></pre>
       </div>
 
       <!-- 图片视图 -->
-      <div v-else-if="activeTab === 'images'" class="images-view">
+      <div v-else-if="activeResultTab === 'images'" class="images-view">
         <div v-if="result.data?.images && result.data.images.length > 0" class="images-grid">
           <div v-for="(img, index) in result.data.images" :key="index" class="image-item">
             <img
@@ -155,9 +155,9 @@ const props = defineProps<{
   result: ExtractResponse
 }>()
 
-const activeTab = ref('preview')
+const activeResultTab = ref('preview')
 
-const tabs = computed(() => [
+const resultTabs = computed(() => [
   { id: 'preview', label: t('results.tabs.preview'), icon: '👁️' },
   { id: 'markdown', label: 'Markdown', icon: '📝' },
   { id: 'json', label: 'JSON', icon: '{ }' },
@@ -229,10 +229,10 @@ const downloadFile = () => {
   let content = ''
   let filename = ''
 
-  if (activeTab.value === 'json') {
+  if (activeResultTab.value === 'json') {
     content = formattedJson.value
     filename = `${props.result.data?.news_id || 'export'}.json`
-  } else if (activeTab.value === 'markdown') {
+  } else if (activeResultTab.value === 'markdown') {
     content = props.result.markdown || ''
     filename = `${props.result.data?.news_id || 'export'}.md`
   } else {
@@ -252,9 +252,9 @@ const downloadFile = () => {
 const copyToClipboard = async () => {
   let content = ''
 
-  if (activeTab.value === 'json') {
+  if (activeResultTab.value === 'json') {
     content = formattedJson.value
-  } else if (activeTab.value === 'markdown') {
+  } else if (activeResultTab.value === 'markdown') {
     content = props.result.markdown || ''
   } else {
     content = props.result.data?.texts?.join('\n\n') || ''
