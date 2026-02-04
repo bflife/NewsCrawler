@@ -3,7 +3,7 @@
 包括：韩国、马来西亚、日本、新加坡、印度、越南等
 """
 from typing import Optional, Dict, Any, List
-from news_crawler.core.base import BaseNewsCrawler as NewsCrawler
+from news_crawler.core.simple_crawler import SimpleNewsCrawler as NewsCrawler
 from news_crawler.core.models import NewsMetaInfo, ContentItem
 import logging
 

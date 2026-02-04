@@ -3,7 +3,7 @@
 包括：美国、英国、法国、德国、俄罗斯等
 """
 from typing import Optional, Dict, Any, List
-from news_crawler.core.base import BaseNewsCrawler as NewsCrawler
+from news_crawler.core.simple_crawler import SimpleNewsCrawler as NewsCrawler
 from news_crawler.core.models import NewsMetaInfo, ContentItem
 import logging
 

@@ -2,7 +2,7 @@
 台湾和香港地区新闻网站爬虫 - 批次5
 """
 from typing import Optional, Dict, Any, List
-from news_crawler.core.base import BaseNewsCrawler as NewsCrawler
+from news_crawler.core.simple_crawler import SimpleNewsCrawler as NewsCrawler
 from news_crawler.core.models import NewsMetaInfo, ContentItem
 import logging
 
