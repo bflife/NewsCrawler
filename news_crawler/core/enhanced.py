@@ -86,8 +86,12 @@ class EnhancedNewsCrawler(BaseNewsCrawler):
     selector_config: Optional[SelectorConfig] = None
     anti_crawler_config: Optional[AntiCrawlerConfig] = None
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, new_url: str = "", save_path: str = 'data/', **kwargs):
+        # 如果没有提供new_url，使用base_url
+        if not new_url and hasattr(self, 'base_url'):
+            new_url = self.base_url
+        
+        super().__init__(new_url=new_url, save_path=save_path, **kwargs)
         
         # 初始化配置
         if self.selector_config is None:
