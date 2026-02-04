@@ -1,11 +1,35 @@
 <template>
   <div class="app-container">
-    <!-- Hero Section -->
-    <header class="hero-section">
-      <div class="lang-switcher-wrapper">
-        <LanguageSwitcher />
+    <!-- 导航菜单 -->
+    <nav class="app-nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <img src="/logo.svg" alt="Logo" class="nav-logo" />
+          <span class="nav-title">{{ t('app.title') }}</span>
+        </div>
+        <div class="nav-menu">
+          <button 
+            @click="currentView = 'extractor'" 
+            :class="['nav-item', { active: currentView === 'extractor' }]"
+          >
+            📰 新闻提取
+          </button>
+          <button 
+            @click="currentView = 'scheduler'" 
+            :class="['nav-item', { active: currentView === 'scheduler' }]"
+          >
+            ⏰ 调度管理
+          </button>
+          <LanguageSwitcher />
+        </div>
       </div>
-      <div class="hero-content">
+    </nav>
+
+    <!-- 内容区域 -->
+    <div v-if="currentView === 'extractor'">
+      <!-- Hero Section -->
+      <header class="hero-section">
+        <div class="hero-content">
         <div class="hero-badge-wrapper">
           <div class="hero-badge">
             <span class="badge-icon">✨</span>
@@ -80,6 +104,11 @@
       </div>
     </main>
 
+    <!-- 调度器管理视图 -->
+    <main v-if="currentView === 'scheduler'" class="app-main scheduler-view">
+      <SchedulerManager />
+    </main>
+
     <footer class="app-footer">
       <div class="footer-content">
         <div class="footer-brand">
@@ -111,11 +140,13 @@ import UrlInputNew from './components/UrlInputNew.vue'
 import ExtractProgress from './components/ExtractProgress.vue'
 import ResultViewerNew from './components/ResultViewerNew.vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
+import SchedulerManager from './components/SchedulerManager.vue'
 import { extractNews } from './services/api'
 import type { ExtractResponse } from './types'
 
 const { t } = useI18n()
 
+const currentView = ref<'extractor' | 'scheduler'>('extractor')
 const loading = ref(false)
 const progress = ref(0)
 const progressMessage = ref('')
@@ -196,13 +227,80 @@ const showAbout = () => {
 
 <style scoped>
 .app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+/* 导航栏 */
+.app-nav {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  color: #666;
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: #f5f5f5;
+  color: #1890ff;
+}
+
+.nav-item.active {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+/* 调度器视图 */
+.scheduler-view {
+  flex: 1;
+  padding: 2rem 0;
 }
 
 /* Hero Section */
